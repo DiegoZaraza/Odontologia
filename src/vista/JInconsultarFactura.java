@@ -9,12 +9,12 @@ package vista;
  *
  * @author Leidy J
  */
-public class JInternalFrame_Factura extends javax.swing.JInternalFrame {
+public class JInconsultarFactura extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form JInternalFrame_Factura
      */
-    public JInternalFrame_Factura() {
+    public JInconsultarFactura() {
         initComponents();
     }
 

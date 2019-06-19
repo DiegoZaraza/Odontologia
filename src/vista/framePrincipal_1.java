@@ -29,19 +29,23 @@ public class framePrincipal extends javax.swing.JFrame {
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuRegistro = new javax.swing.JMenu();
         jMenuItemRegistrarP = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         JmenuAsignaCita = new javax.swing.JMenuItem();
         jMenuModifiCita = new javax.swing.JMenuItem();
         jMenuCancelaCita = new javax.swing.JMenuItem();
-        jMenuEditarAgenda = new javax.swing.JMenuItem();
-        ItemCon = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Jhisto = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -69,8 +73,6 @@ public class framePrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Imprimir Factura");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -96,6 +98,14 @@ public class framePrincipal extends javax.swing.JFrame {
             }
         });
         jMenuRegistro.add(jMenuItemRegistrarP);
+
+        jMenuItem4.setText("Consultar persona");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenuRegistro.add(jMenuItem4);
 
         jMenuBar1.add(jMenuRegistro);
 
@@ -125,22 +135,6 @@ public class framePrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuCancelaCita);
 
-        jMenuEditarAgenda.setText("Editar Agenda");
-        jMenuEditarAgenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuEditarAgendaActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuEditarAgenda);
-
-        ItemCon.setText("Consultar Paciente");
-        ItemCon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItemConActionPerformed(evt);
-            }
-        });
-        jMenu2.add(ItemCon);
-
         jMenuBar1.add(jMenu2);
 
         jMenu1.setText("Modulo Odontologos");
@@ -153,7 +147,26 @@ public class framePrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(Jhisto);
 
+        jMenuItem1.setText("Agenda del dia ");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Carta dental");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Editar Agenda");
+        jMenu1.add(jMenuItem3);
+
         jMenuBar1.add(jMenu1);
+
+        jMenu11.setText("Facturacion");
+
+        jMenuItem5.setText("Nueva Factura");
+        jMenu11.add(jMenuItem5);
+
+        jMenuItem6.setText("Consultar factura");
+        jMenu11.add(jMenuItem6);
+
+        jMenuBar1.add(jMenu11);
 
         setJMenuBar(jMenuBar1);
 
@@ -161,21 +174,15 @@ public class framePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(236, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(53, 53, 53))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addGap(72, 72, 72)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -203,12 +210,6 @@ public class framePrincipal extends javax.swing.JFrame {
 //new Ventana_Asignar_Cita().setVisible(true);
     }//GEN-LAST:event_JmenuAsignaCitaActionPerformed
 
-    private void jMenuEditarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuEditarAgendaActionPerformed
-        llamarEditarAgenda();
-        // new JInternalEditar().setVisible(true);
-
-    }//GEN-LAST:event_jMenuEditarAgendaActionPerformed
-
     private void jMenuCancelaCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCancelaCitaActionPerformed
         llamarEliminarCita();
         new JframeEliminarCita().setVisible(true);
@@ -216,24 +217,22 @@ public class framePrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuCancelaCitaActionPerformed
 
-    private void ItemConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemConActionPerformed
-        consult();
-        new VenConsultarPer().setVisible(true);
-    }//GEN-LAST:event_ItemConActionPerformed
-
     private void JhistoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JhistoActionPerformed
         llamarHistoria();
     }//GEN-LAST:event_JhistoActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
     /* Create and display the form */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JMenuItem ItemCon;
     private javax.swing.JMenuItem Jhisto;
     private javax.swing.JMenuItem JmenuAsignaCita;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -248,7 +247,12 @@ public class framePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuItem jMenuCancelaCita;
-    private javax.swing.JMenuItem jMenuEditarAgenda;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItemRegistrarP;
     private javax.swing.JMenuItem jMenuModifiCita;
     private javax.swing.JMenu jMenuRegistro;
@@ -275,7 +279,7 @@ public void llamarFpersona() {
     }
 
     public void consult() {
-        new VenConsultarPer().setVisible(true);
+        new consupac().setVisible(true);
     }
 
     public void llamarHistoria() {
@@ -283,4 +287,8 @@ public void llamarFpersona() {
         pro.setVisible(true);
         jPanel1.add(pro);
     }
+    public void llamarconsulpac(){
+        new consupac().setVisible(true);
+    }
+    
 }
