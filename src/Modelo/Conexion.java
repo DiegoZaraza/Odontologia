@@ -18,7 +18,7 @@ public class Conexion {
     static String bd = "odontologia";
     static String login = "root";
     static String password = "Leidy123*5";
-    static String url = "jdbc:mysql://localhost/" + bd;
+    static String url = "jdbc:mysql://localhost:33060/" + bd;
 
     Connection connection = null;
 

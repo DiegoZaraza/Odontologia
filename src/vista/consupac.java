@@ -6,7 +6,6 @@
 package vista;
 
 import controlador.ControlBuscar;
-import controlador.gestionPacienteControl;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,27 +16,39 @@ public class consupac extends javax.swing.JFrame {
 
     ControlBuscar ges = new ControlBuscar();
     Object[][] datosTabla;
-    String[] columnas= ('IdPersona';'tipo documento';'Numero Documento';'Nombres';'Apellidos';'Edad';'Sexo';'Telefono';'CorreoElectronico';'Direccion';'Rol');    
-    
+    String[] columnas = {
+        "IdPersona",
+        "tipo documento",
+        "Numero Documento",
+        "Nombres",
+        "Apellidos",
+        "Edad",
+        "Sexo",
+        "Telefono",
+        "CorreoElectronico",
+        "Direccion",
+        "Rol"
+    };
+
     public consupac() {
-        
+
         initComponents();
         mostrarTabla();
     }
-    public void mostrarTabla(){
-        datosTabla=ges.mostrarDatosPer();
-        DefaultTableModel datos = new DefaultTableModel(datosTabla,columnas);
+
+    public void mostrarTabla() {
+        datosTabla = ges.mostrarDatosPer();
+        DefaultTableModel datos = new DefaultTableModel(datosTabla, columnas);
         Jtabla.setModel(datos);
-        
-    }
-    
-     public void busqueda(String busqueda){
-        datosTabla=ges.mostrarDatosPer();
-        DefaultTableModel datos = new DefaultTableModel(datosTabla,columnas);
-        Jtabla.setModel(datos);
-        
+
     }
 
+    public void busqueda(String busqueda) {
+        datosTabla = ges.mostrarDatosPer();
+        DefaultTableModel datos = new DefaultTableModel(datosTabla, columnas);
+        Jtabla.setModel(datos);
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,8 +109,8 @@ public class consupac extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtnombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyPressed
-       String busca = txtnombre.getText();
-       busqueda(busca);
+        String busca = txtnombre.getText();
+        busqueda(busca);
     }//GEN-LAST:event_txtnombreKeyPressed
 
     /**

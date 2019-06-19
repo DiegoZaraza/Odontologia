@@ -9,12 +9,12 @@ package vista;
  *
  * @author Leidy J
  */
-public class JInternalFrameNiños extends javax.swing.JInternalFrame {
+public class JInternalFrameNinos extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form JInternalFrameNiños
      */
-    public JInternalFrameNiños() {
+    public JInternalFrameNinos() {
         initComponents();
     }
 

@@ -8,7 +8,6 @@ package vista;
 import Modelo.Cita;
 import Modelo.Personas;
 import controlador.GestioCitas;
-import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -26,7 +25,6 @@ public class Ventana_Asignar_Cita extends javax.swing.JFrame {
     public Ventana_Asignar_Cita() {
         initComponents();
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -190,23 +188,23 @@ public class Ventana_Asignar_Cita extends javax.swing.JFrame {
     private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
         Cita c = new Cita();
         c.setNumDoc(Float.parseFloat(jTextField1.getText()));
-       GestioCitas ges = new GestioCitas(this);
-       ges.traerPaciente(float documento);
+        GestioCitas ges = new GestioCitas(this);
+        //get.traerPaciente(float documento);
     }//GEN-LAST:event_btnagendarActionPerformed
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        
+
         if (evt.getKeyCode() == KeyEvent.VK_TAB) {
-          System.out.println("Hola");
+            System.out.println("Hola");
             try {
                 GestioCitas gc = new GestioCitas(this);
-                Cita p = gc.traerPaciente(Float.parseFloat(jTextField1.getText()));
+                Personas p = gc.traerPaciente(Float.parseFloat(jTextField1.getText()));
                 System.out.println("Hola" + p.getApellidos());
                 jTextField2.setText(p.getApellidos());
             } // TODO add your handling code here:
             catch (SQLException ex) {
                 Logger.getLogger(Ventana_Asignar_Cita.class.getName()).log(Level.SEVERE, null, ex);
-            }  
+            }
         }
     }//GEN-LAST:event_jTextField1KeyTyped
 
