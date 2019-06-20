@@ -2,15 +2,15 @@ package vista;
 
 import Modelo.Personas;
 
-public class framePrincipal extends javax.swing.JFrame {
+public class framePrincipal_1 extends javax.swing.JFrame {
 
-    public framePrincipal() {
+    public framePrincipal_1() {
         initComponents();
 
     }
 
     public void run() {
-        new framePrincipal().setVisible(true);
+        new framePrincipal_1().setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -212,7 +212,7 @@ public class framePrincipal extends javax.swing.JFrame {
 
     private void jMenuCancelaCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCancelaCitaActionPerformed
         llamarEliminarCita();
-        new JframeEliminarCita().setVisible(true);
+        new Ventana_Elimina_Cita().setVisible(true);
 
 
     }//GEN-LAST:event_jMenuCancelaCitaActionPerformed
@@ -271,7 +271,7 @@ public void llamarFpersona() {
     }
 
     public void llamarEliminarCita() {
-        new JframeEliminarCita().setVisible(true);
+        new Ventana_Elimina_Cita().setVisible(true);
     }
 
     public void llamarEditarAgenda() {
@@ -283,7 +283,7 @@ public void llamarFpersona() {
     }
 
     public void llamarHistoria() {
-        VenHistoria pro = new VenHistoria();
+        VenHistoria1 pro = new VenHistoria1();
         pro.setVisible(true);
         jPanel1.add(pro);
     }

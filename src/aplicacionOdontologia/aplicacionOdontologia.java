@@ -1,15 +1,15 @@
 package aplicacionOdontologia;
 
 import Modelo.Conexion;
-import vista.VenConsultarPer;
-import vista.framePrincipal;
+import vista.consupac;
+import vista.framePrincipal_1;
 
 public class aplicacionOdontologia {
-    VenConsultarPer v = new VenConsultarPer();
+    consupac v = new consupac();
     
     public static void main(String[] args) {
         
-        framePrincipal principal = new framePrincipal();
+        framePrincipal_1 principal = new framePrincipal_1();
         principal.setVisible(true);
         Conexion con = new Conexion();
         con.getConexion();
